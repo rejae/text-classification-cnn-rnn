@@ -182,8 +182,8 @@ def test():
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2 or sys.argv[1] not in ['train', 'test']:
-        raise ValueError("""usage: python run_rnn.py [train / test]""")
+    # if len(sys.argv) != 2 or sys.argv[1] not in ['train', 'test']:
+    #     raise ValueError("""usage: python run_rnn.py [train / test]""")
 
     print('Configuring RNN model...')
     config = TRNNConfig()
@@ -193,8 +193,8 @@ if __name__ == '__main__':
     words, word_to_id = read_vocab(vocab_dir)
     config.vocab_size = len(words)
     model = TextRNN(config)
-
-    if sys.argv[1] == 'train':
-        train()
-    else:
-        test()
+    train()
+    # if sys.argv[1] == 'train':
+    #     train()
+    # else:
+    #     test()
